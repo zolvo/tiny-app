@@ -4,6 +4,8 @@ const mongoose = require("mongoose");
 
 const db = require("./config/keys").mongoURI;
 const questions = require("./routes/api/questions");
+// any routes imported here
+
 
 app.use(express.json())
 
@@ -14,6 +16,7 @@ mongoose
 
 app.get("/", (req, res) => res.send("This Works!"));
 app.use("/api/questions", questions);
+// additional routes go here
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => console.log(`Server is serving on port ${port}`));
